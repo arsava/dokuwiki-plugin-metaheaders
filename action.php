@@ -21,10 +21,10 @@ class action_plugin_metaheaders extends DokuWiki_Action_Plugin {
         return array(
                 'author' => 'Michael Klier',
                 'email' => 'chi@chimeric.de',
-                'date' => '2008-07-25',
+                'date'   => @file_get_contents(DOKU_PLUGIN.'metaheaders/VERSION'),
                 'name' => 'metaheaders',
                 'desc' => 'Lets you add/remove meta headers.',
-                'url' => 'http://wiki.splitbrain.org/plugin:metaheaders'
+                'url' => 'http://dokuwiki.org/plugin:metaheaders'
             );
     }
 
