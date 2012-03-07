@@ -27,9 +27,11 @@ I. Installing the plugin
     "metaheaders". Rename it if needed.
 
 
+
 II. Usage
   Have a look at <http://www.dokuwiki.org/plugin:metaheaders> for usage
   instructions, examples and stuff.
+
 
 
 III. Other notes
@@ -45,6 +47,7 @@ III. Other notes
 
   - Feel free to send patches or suggestions via mail (or post on
     <http://www.dokuwiki.org/plugin:metaheaders>).
+
 
 
 IV. About

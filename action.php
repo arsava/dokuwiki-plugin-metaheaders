@@ -3,9 +3,19 @@
 /**
  * DokuWiki Action Plugin MetaHeaders
  *
+ *
+ * LICENSE: This file is open source software (OSS) and may be copied under
+ *          certain conditions. See COPYING file for details or try to contact
+ *          the author(s) of this file in doubt.
+ *
  * @license GPLv2 (http://www.gnu.org/licenses/gpl2.html)
  * @author Andreas Haerter <development@andreas-haerter.com>
  * @author Michael Klier <chi@chimeric.de> (creator and previous maintainer)
+ * @link http://andreas-haerter.com/projects/dokuwiki-plugin-metaheaders
+ * @link http://www.dokuwiki.org/plugin:metaheaders
+ * @link http://www.dokuwiki.org/devel:plugins
+ * @link http://www.dokuwiki.org/devel:coding_style
+ * @link http://www.dokuwiki.org/devel:environment
  */
 
 
@@ -24,17 +34,6 @@ require_once(DOKU_PLUGIN.'action.php');
  * need to inherit from this class
  */
 class action_plugin_metaheaders extends DokuWiki_Action_Plugin {
-
-    function getInfo() {
-        return array(
-                'author' => 'Michael Klier',
-                'email'  => 'chi@chimeric.de',
-                'date'   => @file_get_contents(DOKU_PLUGIN.'metaheaders/VERSION'),
-                'name'   => 'metaheaders',
-                'desc'   => 'Lets you add/remove meta headers.',
-                'url'    => 'http://dokuwiki.org/plugin:metaheaders'
-            );
-    }
 
     function register(&$controller) {
         $controller->register_hook('TPL_METAHEADER_OUTPUT', 'BEFORE', $this, 'metaheaders');
@@ -103,15 +102,15 @@ class action_plugin_metaheaders extends DokuWiki_Action_Plugin {
             }
         }
 
-        $replace = array( '@AUTHOR@' => $INFO['meta']['creator'],
-                          '@ID@' => $INFO['id'],
-                          '@CREATED@' => $INFO['meta']['date']['created'],
-                          '@LASTMOD@' => $INFO['lastmod'],
-                          '@ABSTRACT@' => preg_replace("/\s+/", ' ', $INFO['meta']['description']['abstract']),
-                          '@TITLE@' => $INFO['meta']['title'],
-                          '@RELATION@' => @implode(', ', @array_keys($INFO['meta']['relation']['references'])),
-                          '@CONTRIBUTORS@' => @implode(', ', @array_values($INFO['meta']['contributor']))
-                        );
+        $replace = array('@AUTHOR@'       => $INFO['meta']['creator'],
+                         '@ID@'           => $INFO['id'],
+                         '@CREATED@'      => $INFO['meta']['date']['created'],
+                         '@LASTMOD@'      => $INFO['lastmod'],
+                         '@ABSTRACT@'     => preg_replace("/\s+/", ' ', $INFO['meta']['description']['abstract']),
+                         '@TITLE@'        => $INFO['meta']['title'],
+                         '@RELATION@'     => @implode(', ', @array_keys($INFO['meta']['relation']['references'])),
+                         '@CONTRIBUTORS@' => @implode(', ', @array_values($INFO['meta']['contributor']))
+                         );
 
         // apply new headers skip if conditions aren't met or header value is empty
         if (!empty($headers)) {
