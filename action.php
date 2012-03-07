@@ -15,7 +15,7 @@ if (!defined("DOKU_INC")){
 }
 
 
-if(!defined('DOKU_PLUGIN')) define('DOKU_PLUGIN',DOKU_INC.'lib/plugins/');
+if (!defined('DOKU_PLUGIN')) define('DOKU_PLUGIN',DOKU_INC.'lib/plugins/');
 require_once(DOKU_PLUGIN.'action.php');
 
 
@@ -28,11 +28,11 @@ class action_plugin_metaheaders extends DokuWiki_Action_Plugin {
     function getInfo() {
         return array(
                 'author' => 'Michael Klier',
-                'email' => 'chi@chimeric.de',
+                'email'  => 'chi@chimeric.de',
                 'date'   => @file_get_contents(DOKU_PLUGIN.'metaheaders/VERSION'),
-                'name' => 'metaheaders',
-                'desc' => 'Lets you add/remove meta headers.',
-                'url' => 'http://dokuwiki.org/plugin:metaheaders'
+                'name'   => 'metaheaders',
+                'desc'   => 'Lets you add/remove meta headers.',
+                'url'    => 'http://dokuwiki.org/plugin:metaheaders'
             );
     }
 
@@ -50,52 +50,52 @@ class action_plugin_metaheaders extends DokuWiki_Action_Plugin {
         global $INFO;
         global $ACT;
 
-        if($ACT != 'show' || !page_exists($ID)) return;
+        if ($ACT != 'show' || !page_exists($ID)) return;
 
         $head =& $event->data;
 
-        $headerconf = DOKU_CONF . 'metaheaders.conf.php';
+        $headerconf = DOKU_CONF.'metaheaders.conf.php';
 
-        if(@file_exists($headerconf)) {
+        if (@file_exists($headerconf)) {
 
             require_once($headerconf);
-            $nlink = count($head['link']);
-            $nmeta = count($head['meta']);
+            $nlink  = count($head['link']);
+            $nmeta  = count($head['meta']);
             $nclear = count($clear);
 
-            if(!empty($clear)) {
+            if (!empty($clear)) {
                 // process link tags
-                for($i = 0; $i < $nlink; $i++) {
-                    for($y = 0; $y < $nclear; $y++) {
-                        if($clear[$y]['cond']) {
-                            if(!preg_match('/' . $clear[$y]['cond'] . '/', $ID)) {
+                for ($i = 0; $i < $nlink; $i++) {
+                    for ($y = 0; $y < $nclear; $y++) {
+                        if ($clear[$y]['cond']) {
+                            if (!preg_match('/' . $clear[$y]['cond'] . '/', $ID)) {
                                 continue;
                             }
                         }
                         $unset = true;
-                        foreach($clear[$y] as $type => $value) {
-                            if($type == 'cond') continue;
-                            if(trim($head['link'][$i][$type]) != trim($value)) $unset = false;
+                        foreach ($clear[$y] as $type => $value) {
+                            if ($type == 'cond') continue;
+                            if (trim($head['link'][$i][$type]) != trim($value)) $unset = false;
                         }
-                        if($unset) {
+                        if ($unset) {
                             unset($head['link'][$i]);
                         }
                     }
                 }
                 // process meta tags
-                for($i = 0; $i < $nmeta; $i++) {
-                    for($y = 0; $y < $nclear; $y++) {
-                        if($clear[$y]['cond']) {
-                            if(!preg_match('/' . $clear[$y]['cond'] . '/', $ID)) {
+                for ($i = 0; $i < $nmeta; $i++) {
+                    for ($y = 0; $y < $nclear; $y++) {
+                        if ($clear[$y]['cond']) {
+                            if (!preg_match('/' . $clear[$y]['cond'] . '/', $ID)) {
                                 continue;
                             }
                         }
                         $unset = true;
-                        foreach($clear[$y] as $type => $value) {
-                            if($type == 'cond') continue;
-                            if(trim($head['meta'][$i][$type]) != trim($value)) $unset = false;
+                        foreach ($clear[$y] as $type => $value) {
+                            if ($type == 'cond') continue;
+                            if (trim($head['meta'][$i][$type]) != trim($value)) $unset = false;
                         }
-                        if($unset) {
+                        if ($unset) {
                             unset($head['meta'][$i]);
                         }
                     }
@@ -114,30 +114,30 @@ class action_plugin_metaheaders extends DokuWiki_Action_Plugin {
                         );
 
         // apply new headers skip if conditions aren't met or header value is empty
-        if(!empty($headers)) {
+        if (!empty($headers)) {
             $types = array_keys($headers);
-            foreach($types as $type) {
-                foreach($headers[$type] as $header) {
+            foreach ($types as $type) {
+                foreach ($headers[$type] as $header) {
                     $skip = false;
 
-                    if($header['cond']) {
-                        if(preg_match('/' . $header['cond'] . '/', $ID)) {
+                    if ($header['cond']) {
+                        if (preg_match('/'.$header['cond'].'/', $ID)) {
                             unset($header['cond']);
                         } else{
                             $skip = true;
                         }
                     }
 
-                    foreach($header as $attr => $value) {
+                    foreach ($header as $attr => $value) {
                         $value = str_replace(array_keys($replace), array_values($replace), $value);
-                        if(empty($value)) {
+                        if (empty($value)) {
                             $skip = true;
-                        } else {
+                        }else{
                             $header[$attr] = $value;
                         }
                     }
 
-                    if(!$skip) $head[$type][] = $header;
+                    if (!$skip) $head[$type][] = $header;
 
                 }
             }
