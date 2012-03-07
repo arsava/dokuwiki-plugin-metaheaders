@@ -1,15 +1,23 @@
 <?php
+
 /**
  * DokuWiki Action Plugin MetaHeaders
- * 
- * @license     GPL 2 (http://www.gnu.org/licenses/gpl.html)
- * @author      Michael Klier <chi@chimeric.de>
+ *
+ * @license GPLv2 (http://www.gnu.org/licenses/gpl2.html)
+ * @author Andreas Haerter <development@andreas-haerter.com>
+ * @author Michael Klier <chi@chimeric.de> (creator and previous maintainer)
  */
-// must be run within Dokuwiki
-if(!defined('DOKU_INC')) die();
+
+
+//check if we are running within the DokuWiki environment
+if (!defined("DOKU_INC")){
+    die();
+}
+
 
 if(!defined('DOKU_PLUGIN')) define('DOKU_PLUGIN',DOKU_INC.'lib/plugins/');
 require_once(DOKU_PLUGIN.'action.php');
+
 
 /**
  * All DokuWiki plugins to extend the admin function
@@ -138,4 +146,4 @@ class action_plugin_metaheaders extends DokuWiki_Action_Plugin {
         return true;
     }
 }
-// vim:ts=4:sw=4:et:enc=utf-8:
+

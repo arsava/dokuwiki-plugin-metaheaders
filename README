@@ -1,8 +1,56 @@
-Meta Headers Plugin for DokuWiki
+Title: README of the MetaHeaders plugin for DokuWiki
+Creation date: 2012-03-07
+Last Update: 2012-03-07
+Author: Andreas Haerter <development [ät] andreas-haerter.com>
+Web: <http://andreas-haerter.com/projects/dokuwiki-plugin-metaheaders>
+     <http://www.dokuwiki.org/plugin:metaheaders>
 
-All documentation for the Backlinks Plugin is available online at:
 
-  * http://dokuwiki.org/plugin:metaheaders
 
-(c) 2008 - 2009 by Michael Klier <chi@chimeric.de>
-See COPYING for license info.
+PLEASE NOTE: I am NO native English speaker. If you find any errors please let
+             me know (e.g. by mail). Otherwise, my English is not getting better
+             (as desired by myself). Thank you! -- Andreas Haerter
+
+
+
+I. Installing the plugin
+  The installation is simple and works as described on
+  <http://www.dokuwiki.org/plugin_installation_instructions>:
+
+  - Use DokuWiki's plugin manager to install the plugin. You can find the needed
+    download URL on <http://www.dokuwiki.org/plugin:metaheaders>.
+
+  - If you need to install the plugin manually instead (for whatever reason):
+    Download the plugin archive (you can find the needed download URL at
+    <http://www.dokuwiki.org/plugin:metaheaders>). Extract it into your
+    DokuWiki's "lib/plugins/" folder. Make sure the new directory is named
+    "metaheaders". Rename it if needed.
+
+
+II. Usage
+  Have a look at <http://www.dokuwiki.org/plugin:metaheaders> for usage
+  instructions, examples and stuff.
+
+
+III. Other notes
+  - Even if it is not required: If you like the plugin, think about a small
+    donation (see <http://andreas-haerter.com/donate/dokuwiki-plugin-metaheaders>)
+    and/or a link to <http://andreas-haerter.com/projects/dokuwiki-plugin-metaheaders>.
+    Thanks :-).
+
+  - This plugin follows the DokuWiki coding style (see
+    <http://www.dokuwiki.org/devel:coding_style>). If you want to submit any
+    patches, please respect its rules (even if you don't like it - I also don't
+    love it but this simply does not matter).
+
+  - Feel free to send patches or suggestions via mail (or post on
+    <http://www.dokuwiki.org/plugin:metaheaders>).
+
+
+IV. About
+  MetaHeaders is a DokuWiki plugin to add/remove meta headers dynamically to
+  your Wiki pages (q.v. <http://en.wikipedia.org/wiki/Meta_element>).
+
+  The plugin was maintained by Michael Klier (<http://m-klier.de/>) from 2008
+  until the end of 2010. See CREDITS for details.
+
