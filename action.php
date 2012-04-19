@@ -104,8 +104,8 @@ class action_plugin_metaheaders extends DokuWiki_Action_Plugin {
 
         $replace = array('@AUTHOR@'       => $INFO['meta']['creator'],
                          '@ID@'           => $INFO['id'],
-                         '@CREATED@'      => $INFO['meta']['date']['created'],
-                         '@LASTMOD@'      => $INFO['lastmod'],
+                         '@CREATED@'      => date('Y-m-d\TH:i:sO',$INFO['meta']['date']['created']),
+                         '@LASTMOD@'      => date('Y-m-d\TH:i:sO',$INFO['lastmod']),
                          '@ABSTRACT@'     => preg_replace("/\s+/", ' ', $INFO['meta']['description']['abstract']),
                          '@TITLE@'        => $INFO['meta']['title'],
                          '@RELATION@'     => @implode(', ', @array_keys($INFO['meta']['relation']['references'])),
