@@ -9,9 +9,8 @@
  *          the author(s) of this file in doubt.
  *
  * @license GPLv2 (http://www.gnu.org/licenses/gpl2.html)
- * @author Andreas Haerter <development@andreas-haerter.com>
+ * @author Andreas Haerter <ah@bitkollektiv.org>
  * @author Michael Klier <chi@chimeric.de> (creator and previous maintainer)
- * @link http://andreas-haerter.com/projects/dokuwiki-plugin-metaheaders
  * @link http://www.dokuwiki.org/plugin:metaheaders
  * @link http://www.dokuwiki.org/devel:plugins
  * @link http://www.dokuwiki.org/devel:coding_style
@@ -31,7 +30,7 @@ require_once(DOKU_PLUGIN.'action.php');
 
 /**
  * All DokuWiki plugins to extend the admin function
- * need to inherit from this class
+ * need to inherit from this class.
  */
 class action_plugin_metaheaders extends DokuWiki_Action_Plugin {
 
@@ -42,7 +41,7 @@ class action_plugin_metaheaders extends DokuWiki_Action_Plugin {
     /**
      * Modifies the meta headers before their send to the browser.
      *
-     * Michael Klier <chi@chimeric.de>
+     * @author Michael Klier <chi@chimeric.de>
      */
     function metaheaders(&$event, $param) {
         global $ID;
