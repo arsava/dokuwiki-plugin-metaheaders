@@ -1,8 +1,12 @@
 
   I. About
 
-    MetaHeaders is a DokuWiki plugin to add/remove meta headers[1] dynamically
+    "MetaHeaders" is a DokuWiki plugin to add/remove meta headers[1] dynamically
     to your Wiki pages.
+
+    Website:     <http://www.dokuwiki.org/plugin:metaheaders>
+    Maintainer:  Andreas Haerter <http://andreas-haerter.com/>
+    Contact:     See "IV. Support" and "V. Contact".
 
     [1] <http://en.wikipedia.org/wiki/Meta_element>
 
@@ -14,9 +18,9 @@
 
     - If possible, use DokuWiki's plugin manager to install the plugin. Have a
       look at the plugin website[2] to get the package download URL, paste it
-      into your Plugin Manager's URL box and hit "Download".
+      into your Plugin Manager URL box and hit "Download".
 
-    - If you need to install the plugin manually: Download the package from the
+    - If you have to install the plugin manually: Download the package from the
       plugin website[2]. Extract it into your DokuWiki's "lib/plugins/" folder.
       Make sure the new directory is named "metaheaders" (rename it if needed).
 
