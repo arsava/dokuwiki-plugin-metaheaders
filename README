@@ -1,8 +1,8 @@
 
   I. About
 
-    "MetaHeaders" is a DokuWiki plugin to add/remove meta headers[1] dynamically
-    to your Wiki pages.
+    "MetaHeaders" is a DokuWiki plugin to add/remove meta headers [1]
+    dynamically to your Wiki pages.
 
     Website:     <http://www.dokuwiki.org/plugin:metaheaders>
     Maintainer:  Andreas Haerter <http://andreas-haerter.com/>
@@ -14,14 +14,14 @@
 
   II. Installation and update
 
-    The installation works as described[1] on DokuWiki.org. Summary:
+    The installation works as described [1] on DokuWiki.org. Summary:
 
     - If possible, use DokuWiki's plugin manager to install the plugin. Have a
-      look at the plugin website[2] to get the package download URL, paste it
+      look at the plugin website [2] to get the package download URL, paste it
       into your Plugin Manager URL box and hit "Download".
 
     - If you have to install the plugin manually: Download the package from the
-      plugin website[2]. Extract it into your DokuWiki's "lib/plugins/" folder.
+      plugin website [2]. Extract it into your DokuWiki's "lib/plugins/" folder.
       Make sure the new directory is named "metaheaders" (rename it if needed).
 
     Updating the plugin works the same way: Simply install the newest version
@@ -37,7 +37,7 @@
 
   III. Usage
 
-    Have a look at the plugin website[1] for usage instructions and examples.
+    Have a look at the plugin website [1] for usage instructions and examples.
 
     [1] <http://www.dokuwiki.org/plugin:metaheaders>
 
@@ -45,9 +45,9 @@
 
   IV. Support
 
-    If you need help, check the FAQ[1] and try to find useful information by
-    using the DokuWiki Search page[2]. If you found nothing helpful, ask your
-    question at the DokuWiki forum[3] (preferred) or IRC channel[4].
+    If you need help, check the FAQ [1] and try to find useful information by
+    using the DokuWiki Search page [2]. If you found nothing helpful, ask your
+    question at the DokuWiki forum [3] (preferred) or IRC channel [4].
 
     [1] <http://www.dokuwiki.org/plugin:metaheaders#faq>
     [2] <http://search.dokuwiki.org/>
@@ -58,13 +58,13 @@
 
   V. Contact
 
-    If you think you found a bug or you got a useful idea (a.k.a. "feature
-    request"), create an issue[1] on GitHub (preferred), or contact me by
-    mail[2].
+    If you think you have found a bug or have a useful idea (a.k.a. "feature
+    request"), create an issue [1] on GitHub (preferred), or contact me by
+    mail [2].
 
     Feel free to submit patches as GitHub pull requests (preferred) or by mail
-    as well. However, please try to respect the DokuWiki coding style[3] as this
-    plugin follows its rules.
+    as well. However, please try to respect the DokuWiki coding style [3] as
+    this plugin follows its rules.
 
     [1] <https://github.com/bitkollektiv/dokuwiki-plugin-metaheaders/issues>
     [2] Andreas Haerter <ah@bitkollektiv.org>
@@ -74,11 +74,12 @@
 
   VI. Other notes
 
-    If you like this free project, you might buy me a coffee[1], or get some
-    cool QR Code merchandise[2]. Thank you! :-)
+    If you like this free project, you might buy me a coffee [1], or get some
+    cool QR Code merchandise [2]. Thank you! :-)
 
     I am no native English speaker. If you find any errors please let me
-    know[3]. Otherwise, my English is not getting better (as desired by myself).
+    know [3]. Otherwise, my English is not getting better (as desired by
+    myself).
 
     [1] <http://bitkollektiv.org/donate/dokuwiki-plugin-metaheaders/>
     [2] <http://goqr.me/>
