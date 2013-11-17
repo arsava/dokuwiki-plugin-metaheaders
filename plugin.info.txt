@@ -1,6 +1,6 @@
 ﻿base     metaheaders
-author   SYN Systems
-email    dokuwiki@dev.syn-systems.com
+author   Andreas Haerter
+email    development@andreas-haerter.com
 date     2012-03-07
 name     MetaHeaders plugin
 desc     MetaHeaders allows you to add/remove meta headers dynamically to your Wiki pages.

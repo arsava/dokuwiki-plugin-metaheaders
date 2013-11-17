@@ -9,7 +9,7 @@
  *          the author(s) of this file in doubt.
  *
  * @license GPLv2 (http://www.gnu.org/licenses/gpl2.html)
- * @author Andreas Haerter <ah@syn-systems.com>
+ * @author Andreas Haerter <development@andreas-haerter.com>
  * @author Michael Klier <chi@chimeric.de> (creator and previous maintainer)
  * @link http://www.dokuwiki.org/plugin:metaheaders
  * @link http://www.dokuwiki.org/devel:plugins
