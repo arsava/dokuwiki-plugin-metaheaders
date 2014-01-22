@@ -47,6 +47,8 @@ class action_plugin_metaheaders extends DokuWiki_Action_Plugin {
         global $ID;
         global $INFO;
         global $ACT;
+        global $clear;
+        global $headers;
 
         if ($ACT != 'show' || !page_exists($ID)) return;
 
