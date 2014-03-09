@@ -47,6 +47,8 @@ class action_plugin_metaheaders extends DokuWiki_Action_Plugin {
         global $ID;
         global $INFO;
         global $ACT;
+        global $clear;
+        global $headers;
 
         if ($ACT != 'show' || !page_exists($ID)) return;
 
@@ -57,46 +59,32 @@ class action_plugin_metaheaders extends DokuWiki_Action_Plugin {
         if (@file_exists($headerconf)) {
 
             require_once($headerconf);
-            $nlink  = count($head['link']);
-            $nmeta  = count($head['meta']);
             $nclear = count($clear);
 
             if (!empty($clear)) {
-                // process link tags
-                for ($i = 0; $i < $nlink; $i++) {
-                    for ($y = 0; $y < $nclear; $y++) {
-                        if ($clear[$y]['cond']) {
-                            if (!preg_match('/' . $clear[$y]['cond'] . '/', $ID)) {
-                                continue;
-                            }
-                        }
-                        $unset = true;
-                        foreach ($clear[$y] as $type => $value) {
-                            if ($type == 'cond') continue;
-                            if (trim($head['link'][$i][$type]) != trim($value)) $unset = false;
-                        }
-                        if ($unset) {
-                            unset($head['link'][$i]);
-                        }
-                    }
-                }
-                // process meta tags
-                for ($i = 0; $i < $nmeta; $i++) {
-                    for ($y = 0; $y < $nclear; $y++) {
-                        if ($clear[$y]['cond']) {
-                            if (!preg_match('/' . $clear[$y]['cond'] . '/', $ID)) {
-                                continue;
-                            }
-                        }
-                        $unset = true;
-                        foreach ($clear[$y] as $type => $value) {
-                            if ($type == 'cond') continue;
-                            if (trim($head['meta'][$i][$type]) != trim($value)) $unset = false;
-                        }
-                        if ($unset) {
-                            unset($head['meta'][$i]);
-                        }
-                    }
+            
+                foreach( $head as $outerType => $list ) {
+					
+                    $nlink = count($list);
+                    // process link tags
+                    for ($i = 0; $i < $nlink; $i++) {
+                        for ($y = 0; $y < $nclear; $y++) {
+                            if ($clear[$y]['cond']) {
+	                        if (!preg_match('/' . $clear[$y]['cond'] . '/', $ID)) {
+	                            continue;
+	                        }
+	                    }
+	                    
+	                    $unset = true;
+	                    foreach ($clear[$y] as $type => $value) {
+	                        if ($type == 'cond') continue;
+	                        if (trim($head[$outerType][$i][$type]) != trim($value)) $unset = false;
+	                    }
+	                    if ($unset) {
+	                        unset($head[$outerType][$i]);
+	                    }
+	                }
+	            }
                 }
             }
         }
