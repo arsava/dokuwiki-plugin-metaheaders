@@ -9,12 +9,12 @@
  *          the author(s) of this file in doubt.
  *
  * @license GPLv2 (http://www.gnu.org/licenses/gpl2.html)
- * @author Andreas Haerter <development@andreas-haerter.com>
+ * @author ARSAVA <dokuwiki@dev.arsava.com>
  * @author Michael Klier <chi@chimeric.de> (creator and previous maintainer)
- * @link http://www.dokuwiki.org/plugin:metaheaders
- * @link http://www.dokuwiki.org/devel:plugins
- * @link http://www.dokuwiki.org/devel:coding_style
- * @link http://www.dokuwiki.org/devel:environment
+ * @link https://www.dokuwiki.org/plugin:metaheaders
+ * @link https://www.dokuwiki.org/devel:plugins
+ * @link https://www.dokuwiki.org/devel:coding_style
+ * @link https://www.dokuwiki.org/devel:environment
  */
 
 
