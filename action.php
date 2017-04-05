@@ -82,6 +82,7 @@ class action_plugin_metaheaders extends DokuWiki_Action_Plugin {
 	                    }
 	                    if ($unset) {
 	                        unset($head[$outerType][$i]);
+				if ( empty($head[$outerType]) ) unset( $head[$outerType] );
 	                    }
 	                }
 	            }
