@@ -1,7 +1,7 @@
 base     metaheaders
 date     2015-05-28
-author   i-net /// software GmbH
-email    tools@inetsoftware.de
+author   ARSAVA
+email    dokuwiki@dev.arsava.com
 date     2014-02-09
 name     MetaHeaders plugin
 desc     MetaHeaders allows you to add/remove meta headers dynamically to your Wiki pages.
