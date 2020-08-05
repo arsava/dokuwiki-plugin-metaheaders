@@ -56,13 +56,12 @@ class action_plugin_metaheaders extends DokuWiki_Action_Plugin {
 
         $headerconf = DOKU_CONF.'metaheaders.conf.php';
 
-        if (@file_exists($headerconf) && is_array($clear)) {
+        if (@file_exists($headerconf)) {
 
             require_once($headerconf);
-            $nclear = count($clear);
 
             if (!empty($clear)) {
-
+	            $nclear = count($clear);
                 foreach( $head as $outerType => $list ) {
 					
                     $nlink = count($list);
