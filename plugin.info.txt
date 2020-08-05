@@ -1,5 +1,4 @@
 base     metaheaders
-date     2015-05-28
 author   ARSAVA
 email    dokuwiki@dev.arsava.com
 date     2020-08-05
