@@ -43,7 +43,7 @@ class action_plugin_metaheaders extends DokuWiki_Action_Plugin {
      *
      * @author Michael Klier <chi@chimeric.de>
      */
-    function metaheaders(&$event, $param) {
+    function metaheaders(Doku_Event $event, $param) {
         global $ID;
         global $INFO;
         global $ACT;
@@ -56,13 +56,13 @@ class action_plugin_metaheaders extends DokuWiki_Action_Plugin {
 
         $headerconf = DOKU_CONF.'metaheaders.conf.php';
 
-        if (@file_exists($headerconf)) {
+        if (@file_exists($headerconf) && is_array($clear)) {
 
             require_once($headerconf);
             $nclear = count($clear);
 
             if (!empty($clear)) {
-            
+
                 foreach( $head as $outerType => $list ) {
 					
                     $nlink = count($list);
@@ -70,21 +70,32 @@ class action_plugin_metaheaders extends DokuWiki_Action_Plugin {
                     for ($i = 0; $i < $nlink; $i++) {
                         for ($y = 0; $y < $nclear; $y++) {
                             if ($clear[$y]['cond']) {
-	                        if (!preg_match('/' . $clear[$y]['cond'] . '/', $ID)) {
-	                            continue;
-	                        }
-	                    }
-	                    
-	                    $unset = true;
-	                    foreach ($clear[$y] as $type => $value) {
-	                        if ($type == 'cond') continue;
-	                        if (trim($head[$outerType][$i][$type]) != trim($value)) $unset = false;
-	                    }
-	                    if ($unset) {
-	                        unset($head[$outerType][$i]);
-	                    }
-	                }
-	            }
+		                        if (!preg_match('/' . $clear[$y]['cond'] . '/', $ID)) {
+		                            continue;
+		                        }
+		                    }
+		                    
+		                    $unset = true;
+		                    foreach ($clear[$y] as $type => $value) {
+		                        if ($type == 'cond') continue;
+		                        
+		                        $headerVal = trim($head[$outerType][$i][$type]);
+		                        if ( substr($type, 0, 1) == '%' ) {
+			                        $type = substr($type, 1 );
+									$headerVal = trim($head[$outerType][$i][$type]);
+			                        if ( !preg_match(trim($value), $headerVal ) ) {
+				                        $unset = false;
+				                    }
+		                        } else 
+		                        if ($headerVal != trim($value)) {
+			                        $unset = false;
+								}
+		                    }
+		                    if ($unset) {
+		                        unset($head[$outerType][$i]);
+		                    }
+		                }
+		            }
                 }
             }
         }
