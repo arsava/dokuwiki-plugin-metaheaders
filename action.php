@@ -68,7 +68,7 @@ class action_plugin_metaheaders extends DokuWiki_Action_Plugin {
                     // process link tags
                     for ($i = 0; $i < $nlink; $i++) {
                         for ($y = 0; $y < $nclear; $y++) {
-                            if ($clear[$y]['cond']) {
+                            if ( $clear[$y]?->['cond']) {
 		                        if (!preg_match('/' . $clear[$y]['cond'] . '/', $ID)) {
 		                            continue;
 		                        }
@@ -78,10 +78,10 @@ class action_plugin_metaheaders extends DokuWiki_Action_Plugin {
 		                    foreach ($clear[$y] as $type => $value) {
 		                        if ($type == 'cond') continue;
 		                        
-		                        $headerVal = trim($head[$outerType][$i][$type]);
+		                        $headerVal = trim($head[$outerType]?->[$i]?->[$type]??'');
 		                        if ( substr($type, 0, 1) == '%' ) {
 			                        $type = substr($type, 1 );
-									$headerVal = trim($head[$outerType][$i][$type]);
+									$headerVal = trim($head[$outerType]?->[$i]?->[$type]??'');
 			                        if ( !preg_match(trim($value), $headerVal ) ) {
 				                        $unset = false;
 				                    }
