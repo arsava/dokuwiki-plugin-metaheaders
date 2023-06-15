@@ -105,8 +105,8 @@ class action_plugin_metaheaders extends DokuWiki_Action_Plugin {
                          '@LASTMOD@'      => date('Y-m-d\TH:i:sO',$INFO['lastmod']),
                          '@ABSTRACT@'     => preg_replace("/\s+/", ' ', $INFO['meta']['description']['abstract']),
                          '@TITLE@'        => $INFO['meta']['title'],
-                         '@RELATION@'     => @implode(', ', @array_keys($INFO['meta']['relation']['references'])),
-                         '@CONTRIBUTORS@' => @implode(', ', @array_values($INFO['meta']['contributor']))
+                         '@RELATION@'     => @implode(', ', @array_keys($INFO['meta']['relation']['references']?:[])),
+                         '@CONTRIBUTORS@' => @implode(', ', @array_values($INFO['meta']['contributor']?:[]))
                          );
 
         // apply new headers skip if conditions aren't met or header value is empty
