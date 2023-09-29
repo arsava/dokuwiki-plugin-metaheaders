@@ -116,7 +116,7 @@ class action_plugin_metaheaders extends DokuWiki_Action_Plugin {
                 foreach ($headers[$type] as $header) {
                     $skip = false;
 
-                    if ($header['cond']) {
+                    if (isset($header['cond']) && $header['cond']) {
                         if (preg_match('/'.$header['cond'].'/', $ID)) {
                             unset($header['cond']);
                         } else{
